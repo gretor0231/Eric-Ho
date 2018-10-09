@@ -1,0 +1,21 @@
+
+public class Sundae extends IceCream{
+
+    double costIce;
+    double costOther;
+    String nameFirst;
+    String nameSecond;
+
+    public Sundae(IceCream nameIce, Dessert nameOther) {
+        this.nameFirst = nameIce.name;
+        this.nameSecond = nameOther.name;
+        this.costIce = nameIce.getPrice();
+        this.costOther = nameOther.getPrice();
+
+    }
+    @Override
+    public double getPrice() {
+        return this.costIce + this.costOther;
+    }
+
+}
