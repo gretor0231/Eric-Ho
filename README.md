@@ -1,4 +1,4 @@
-Hi, my name is Cheng En Ho (Eric Ho). I am a Computer Science master student at the University of New Mexico. I have worked as a hardware engineer at ASUS company and BISO engineer at AMI company.
+Hi, my name is Cheng En Ho (Eric Ho). I am a Computer Science master student at the University of New Mexico. I have worked as a hardware engineer at ASUS company and BISO engineer at AMI company. Now I am a full time student at UNM.
 
 Fall 2018 UNM Schedule:
 
