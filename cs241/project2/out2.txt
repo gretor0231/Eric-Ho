@@ -1,0 +1,11 @@
+total 44
+drwxrwxr-x 4 ericho ericho 4096 Aug 25 09:35 .
+drwxrwxr-x 6 ericho ericho 4096 Jul 31 02:01 ..
+-rwxrwxr-x 1 ericho ericho 8600 Aug 25 09:34 a.out
+drwxrwxr-x 3 ericho ericho 4096 Aug 25 09:33 cmake-build-debug
+-rw-rw-r-- 1 ericho ericho  140 Jul 21 15:24 CMakeLists.txt
+drwxrwxr-x 2 ericho ericho 4096 Aug 25 09:34 .idea
+-rw-rw-r-- 1 ericho ericho  227 Aug 25 09:28 main.c
+-rw-rw-r-- 1 ericho ericho  100 Aug 25 09:35 main.txt
+-rw-rw-r-- 1 ericho ericho   33 Aug 25 09:35 out1.txt
+-rw-rw-r-- 1 ericho ericho    0 Aug 25 09:35 out2.txt
