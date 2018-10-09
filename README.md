@@ -29,6 +29,8 @@ CS 544  - Intro to Cybersecurity(Python)
 
 CS 585  - Computer Networks (C)
 
+CS 564  - Introduction to Database Management(Java PHP)
+
 CS 591  - Fundamentals of Computer Science
 
 CS 530  - Geometric and Probabilistic Methods in Computer Science
