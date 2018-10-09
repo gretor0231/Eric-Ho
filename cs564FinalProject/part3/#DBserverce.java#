@@ -1,0 +1,171 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.*;
+
+public class DBserverce {
+    String url = "jdbc:mysql://chester.cs.unm.edu:3306/ericho";
+    String user = "ericho";
+    String password = "rvWERE2y";
+
+    private Connection connect(){
+        Connection connection;
+        try {
+            connection = DriverManager.getConnection(url,user,password);
+
+        } catch (SQLException ex) {
+            connection = null;
+        }
+        return connection;
+    }
+
+    //create(add account)
+
+    int AddAccount(String firstName, Double attack, Double defence, String citizenship, Double balance){
+        int userId = -1;
+        int accountId = -1;
+        Connection connection = connect();
+
+        try {
+            connection.setAutoCommit(false);
+            //AddUser
+            String addUserSql= "insert into Users(firstName, attack, defence, citizenship) values(?,?,?,?)";
+            PreparedStatement addUser = connection.prepareStatement(addUserSql,Statement.RETURN_GENERATED_KEYS);
+            addUser.setString(1,firstName);
+            addUser.setDouble(2,attack);
+            addUser.setDouble(3,defence);
+            addUser.setString(4,citizenship);
+            addUser.executeUpdate();
+
+            ResultSet addUserResults = addUser.getGeneratedKeys();
+            if(addUserResults.next()){
+                userId = addUserResults.getInt(1);
+            }
+
+
+            //AddAccount
+            String addAccountSql = "insert into Accounts(Balance) values(?)";
+            PreparedStatement addAccount = connection.prepareStatement(addAccountSql, Statement.RETURN_GENERATED_KEYS);
+            addAccount.setDouble(1,balance);
+            addAccount.executeUpdate();
+
+            ResultSet addAccountResults = addAccount.getGeneratedKeys();
+            if (addAccountResults.next()){
+                accountId = addAccountResults.getInt(1);
+            }
+            if(userId > 0 && accountId > 0){
+                String linkAccountSql = "insert into mappings(UserId, AccountId) values (?,?)";
+                PreparedStatement linkAccount = connection.prepareStatement(linkAccountSql);
+                linkAccount.setInt(1, userId);
+                linkAccount.setInt(2, accountId);
+                linkAccount.executeUpdate();
+                connection.commit();
+
+            }else {
+                connection.rollback();
+            }
+            connection.close();
+
+        }catch (SQLException ex){
+            System.err.println("An error !!!!!!!!!!!!!!! has occure!!!!!!!!!!!!!!!!!!!!!"+ ex.getMessage());
+
+        }
+        return accountId;
+
+    }
+
+    //read
+    Fitherinfo GetAccount(int accountId) {
+        Fitherinfo fither = null;
+        Connection connection = connect();
+        try{
+        String findUserSql = "select FirstName, attack, defence, citizenship, Balance "
+                + "from Users a join mappings b on a.UserID = b.UserId "
+                + "join Accounts c on c.AccountID = b.AccountId "
+                + "where c.AccountID = ? ";
+        PreparedStatement findUser = connection.prepareStatement(findUserSql);
+            findUser.setInt(1,accountId);
+            ResultSet findUserResults = findUser.executeQuery();
+            if (findUserResults.next()){
+                String firstName = findUserResults.getString("firstName");
+                double attack = findUserResults.getDouble("attack");
+                double defence = findUserResults.getDouble("defence");
+                String citizenship = findUserResults.getString("citizenship");
+                double balance = findUserResults.getDouble("Balance");
+
+                fither = new Fitherinfo(firstName, attack, defence, citizenship,balance);
+
+            }else {
+                System.err.println("Nooooooooooooooo~!!! User account was found for ID !!!!!!"+ accountId);
+            }
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+
+        return fither;
+    }
+
+
+
+//    update
+
+    boolean UpdateAccount( int accountId, double balance){
+        boolean success = false;
+        Connection connection = connect();
+        try{
+            String updateSql;
+            updateSql = "UPDATE Accounts SET Balance = ? WHERE AccountID = ?";
+            PreparedStatement updateBalance = connection.prepareStatement(updateSql);
+            updateBalance.setDouble(1,balance);
+            updateBalance.setInt(2,accountId);
+            updateBalance.executeUpdate();
+
+            success = true;
+        } catch (SQLException ex){
+            Logger.getLogger(DBserverce.class.getName()).log(Level.SEVERE,null,ex);
+
+        }
+        return success;
+    }
+
+
+
+//    delete
+
+    boolean DeleteAccount(int accountId){
+        boolean success = false;
+        Connection connection = connect();
+        try{
+            String deleteSql = "DELETE "
+                    + "from mappings "
+                    + "where AccountId = ? ";
+            PreparedStatement deleteBalance = connection.prepareStatement(deleteSql);
+            deleteBalance.setInt(1,accountId);
+            deleteBalance.executeUpdate();
+
+            String deleteSql1 = "DELETE "
+                    + "from Accounts "
+                    + "where AccountID = ? ";
+            PreparedStatement deleteBalance1 = connection.prepareStatement(deleteSql1);
+            deleteBalance1.setInt(1,accountId);
+            deleteBalance1.executeUpdate();
+
+            String deleteSql2 = "DELETE "
+                    + "from Users "
+                    + "where UserID = ? ";
+            PreparedStatement deleteBalance2 = connection.prepareStatement(deleteSql2);
+            deleteBalance2.setInt(1,accountId);
+            deleteBalance2.executeUpdate();
+
+
+
+
+            success = true;
+        } catch (SQLException ex){
+            System.err.println(ex.getMessage());
+        }
+        return success;
+    }
+
+
+}
