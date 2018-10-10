@@ -1,0 +1,72 @@
+1100
+0111 1111
+1000 0000
+1111 1111
+0001 0010 1100
+0111 1111 1111 1111
+1000 0000 0000 0000
+42
+481
+3,855
+61,680
+61,683
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
+ERROR
+usage:
+binary OPTION NUMBER
+  OPTION:
+    -b2d  NUMBER is binary and output will be in decimal.
+    -d2b  NUMBER is decimal and output will be in binary.
+
+  NUMBER:
+    number to be converted.
+
