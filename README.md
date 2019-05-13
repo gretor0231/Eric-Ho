@@ -15,6 +15,10 @@ CS 241L - Data Organization (C)
 
 CS 251L - Intermediate Programming (Java)
 
+CS 261  - Math Foundations of CS
+
+cs 361L - Data Struct & Algorithms
+
 CS 544  - Intro to Cybersecurity(Python)
 
 CS 585  - Computer Networks (C)
@@ -27,7 +31,14 @@ CS 530  - Geometric and Probabilistic Methods in Computer Science
 
 ECE 517 - Machine Learining (Python, Matlab)
 
-CS 561 - Algorithms and Data Structures 
+CS 561  - Algorithms and Data Structures 
 
 Mobile App Contest 2018-2019
 
+PHYC523 - Quantum Field Theory I
+
+PHYC524 - Quantum Field Theory II
+
+CS 500  - Introduction to the Theory of Computation
+
+CS 523  - Complex Adaptive Systems (Python Matlab)
