@@ -6,7 +6,7 @@ Hi, my name is Cheng En Ho (Eric Ho). I am a Computer Science master student at 
 I have hide the "sensitive code": specifically CS544 (Intro to Cybersecurity UNM), because it has some attack scrver scripts, feel free to contact me at gretor0231@gmail.com
 
 ## UNM ##
-This directory corresponds to the classes I took at University of New Mexico. I started UNM in Spring of 2017 major'ing in Computer Science. I am planned to graduate UNM with a Master of Science in Computer Science in Fall 2019.
+This directory corresponds to the classes I took at University of New Mexico. I started UNM in Spring of 2017 major'ing in Computer Science. I am planned to graduate UNM with a Master of Science in Computer Science in end of Fall 2019.
 
 Relevant classes taken:
 
@@ -17,7 +17,7 @@ CS 251L - Intermediate Programming (Java)
 
 CS 261  - Math Foundations of CS
 
-cs 361L - Data Struct & Algorithms
+CS 361L - Data Struct & Algorithms
 
 CS 544  - Intro to Cybersecurity(Python)
 
