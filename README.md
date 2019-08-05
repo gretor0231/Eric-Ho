@@ -41,4 +41,4 @@ PHYC524 - Quantum Field Theory II
 
 CS 500  - Introduction to the Theory of Computation
 
-CS 523  - Complex Adaptive Systems (Python Matlab)
+CS 523  - Complex Adaptive Systems (Python Matlab C++)
